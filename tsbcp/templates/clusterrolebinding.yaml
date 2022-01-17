@@ -1,0 +1,67 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    platform.tsb.tetrate.io/application: tsb-operator-controlplane
+    platform.tsb.tetrate.io/component: tsb-operator
+    platform.tsb.tetrate.io/plane: control
+  name: tsb-operator-control-plane
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: tsb-operator-control-plane
+subjects:
+- kind: ServiceAccount
+  name: tsb-operator-control-plane
+  namespace: 'istio-system'
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    platform.tsb.tetrate.io/application: tsb-operator-controlplane
+    platform.tsb.tetrate.io/component: tsb-operator
+    platform.tsb.tetrate.io/plane: control
+  name: tsb-operator-control-plane1
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: tsb-operator-control-plane
+  namespace: 'istio-system'
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    platform.tsb.tetrate.io/application: tsb-operator-dataplane
+    platform.tsb.tetrate.io/component: tsb-operator
+    platform.tsb.tetrate.io/plane: data
+  name: tsb-operator-data-plane
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: tsb-operator-data-plane
+subjects:
+- kind: ServiceAccount
+  name: tsb-operator-data-plane
+  namespace: 'istio-gateway'
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    platform.tsb.tetrate.io/application: tsb-operator-dataplane
+    platform.tsb.tetrate.io/component: tsb-operator
+    platform.tsb.tetrate.io/plane: data
+  name: tsb-operator-data-plane1
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: tsb-operator-data-plane
+  namespace: 'istio-gateway'

@@ -1,0 +1,22 @@
+name: tsbmp-complete
+description: A Helm chart for Kubernetes
+version: 1.4.0-GAT
+type: application
+
+dependencies:
+  - name: cert-manager
+    repository: file://charts/cert-manager
+    version: v1.5.3
+    condition: cert-manager.enabled
+  - name: eck-operator
+    repository: file://charts/eck-operator
+    version: 1.7.1
+    condition: eck-operator.enabled
+  - name: postgres-operator
+    repository: file://charts/postgres-operator
+    version: 1.6.3
+    condition: postgres-operator.enabled
+  - name: tsbmp
+    repository: file://charts/tsbmp
+    version: 1.4.0
+    condition: tsbmp.enabled
