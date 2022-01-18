@@ -79,9 +79,9 @@ spec:
 #              host: "bookinfo/defender.bookinfo.svc.cluster.local"
     - name: bookinfoinspected
       port: 80
-      hostname: "tetrate.sampleapp.com"
+      hostname: "tetrate.fluxapp.com"
       routing:
         rules:
           - route:
-              host: "bookinfo/productpage.bookinfo.svc.cluster.local"
-              port: 9080
+              host: "bookinfo/page.bookinfo.svc.cluster.local"
+              port: 9000
