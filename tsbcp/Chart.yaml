@@ -1,6 +1,6 @@
 name: tsbmp-complete
 description: A Helm chart for Kubernetes
-version: 1.4.0-GAT
+version: 1.4.0
 type: application
 
 dependencies:
