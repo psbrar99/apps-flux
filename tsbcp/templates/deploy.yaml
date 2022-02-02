@@ -8,7 +8,7 @@ metadata:
   name: tsb-operator-control-plane
   namespace: 'istio-system'
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       name: tsb-operator
